@@ -24,7 +24,7 @@ Raw data with missing values, outliers, and unpolished visuals. Progressing step
 
 ### Early Insights (Raw Data)
 - Medians  
-- Mean sale price: ~$1,075,000 AUD  
+- Mean 
 - Most common: 3-bedroom houses 
 - Strong correlations: Rooms and price, distance negatively impacts value  
 - Data issues: 
