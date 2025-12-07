@@ -1,39 +1,46 @@
-# Melbourne Housing Prices  
-Exploratory Data Analysis (2016–2018)
+# Melbourne Housing Prices – Exploratory Data Analysis 🏠
 
 <div align="center">
-  <img src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?ixlib=rb-4.0.3&auto=format&fit=crop&q=80&w=2160" alt="Melbourne real estate" width="100%"/>
+  <img src="https://images.unsplash.com/photo-1524814684765-6b7b75e758f7?ixlib=rb-4.0.3&auto=format&fit=crop&q=80&w=2160" alt="Aerial view of Melbourne suburbs" width="100%"/>
   <br><br>
-  <h3>Raw, honest, and very much in progress</h3>
+  <h3>Diving into Melbourne's real estate market (2016–2017)</h3>
 </div>
 
 <br>
 
 **⚠️ DATA CLEANING NOT DONE YET**  
-Missing values everywhere. Landsize has 9-million-m² mansions. BuildingArea has 777-year-old houses. You’ve been warned.
+Raw data with missing values, outliers, and unpolished visuals. Progressing step by step—stay tuned for refinements.
 
-### What’s inside right now
-- `melb_data.csv` – the original Kaggle snapshot (34,857 rows)
-- `01_first_look.ipynb` – shape, dtypes, % missing, insane outliers
-- `02_price_analysis.ipynb` – distribution before/after log, top 20 suburbs, price growth by year
-- `03_distance_vs_price.ipynb` – the classic “further from CBD = cheaper” scatter (with outliers that break physics)
-- `04_rooms_bath_car.ipynb` – how many rooms, baths, and car spots actually move the needle
-- `05_suburb_deep_dive.ipynb` – boxplots of the most expensive vs cheapest postcodes
+### Dataset
+- **Source**: [Kaggle – Melbourne Housing Snapshot](https://www.kaggle.com/datasets/dansbecker/melbourne-housing-snapshot)  
+- **File**: `melb_data.csv` (13,580 rows, 21 columns)  
+- **Key Features**: Suburb, Rooms, Type (house/unit/townhouse), Price, Distance from CBD, Bathroom, Car spots, Landsize, BuildingArea, YearBuilt, Regionname.
 
-### Early observations (pre-cleaning)
-- Median sale price: $1,033,000 AUD
-- 75th percentile distance from CBD: 13.6 km
-- 14% of rows missing `BuildingArea`, 22% missing `YearBuilt`
-- Some properties have 10+ bedrooms and sell for <$300k (data entry errors confirmed)
-- House > Unit > Townhouse in median price, as expected
+### Current Explorations
+- `01_initial_overview.ipynb`: Data shape, types, missing values summary, basic descriptives.  
+- `02_price_distributions.ipynb`: Histograms, boxplots by type, log-transformed prices.  
+- `03_location_analysis.ipynb`: Price vs. distance from CBD, suburb medians, scatter plots with latitude/longitude.  
+- `04_feature_correlations.ipynb`: Heatmap of numeric features, rooms/bathrooms vs. price.  
+- `05_outlier_detection.ipynb`: Identifying extreme land sizes and old buildings.
 
-### Next on the list
-- Proper outlier treatment
-- Impute/fix/drop the big missing columns
-- Price per square metre
-- Interactive map with Folium/Plotly
-- Eventually: simple prediction baseline
+### Early Insights (Raw Data)
+- Median sale price: ~$903,000 AUD  
+- Mean sale price: ~$1,075,000 AUD  
+- Most common: 3-bedroom houses, ~10km from CBD  
+- Strong correlations: Rooms and price, distance negatively impacts value  
+- Data issues: ~47% missing BuildingArea, outliers like 9,000+ m² landsizes  
 
-Contributions, suggestions, and “dude you missed this” issues are more than welcome.
+### Tools & Libraries
+- Python 3.8+  
+- Pandas, NumPy for data handling  
+- Matplotlib, Seaborn, Plotly for visualizations  
 
-December 2025 | MIT License
+### Roadmap
+- [ ] Data cleaning: Handle missing values, remove/fix outliers  
+- [ ] Feature engineering: Price per m², property age, seasonal trends  
+- [ ] Advanced viz: Interactive maps with Folium  
+- [ ] Modeling: Baseline regression for price prediction  
+
+Open to suggestions, corrections, and collaborations—drop an issue or PR!
+
+Last updated: December 07, 2025 | MIT License
