@@ -1,44 +1,39 @@
-# Melbourne Housing Prices – Exploratory Data Analysis 🏘️
+# Melbourne Housing Prices  
+Exploratory Data Analysis (2016–2018)
 
 <div align="center">
-  <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&q=80&w=2000" alt="Melbourne skyline" />
+  <img src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?ixlib=rb-4.0.3&auto=format&fit=crop&q=80&w=2160" alt="Melbourne real estate" width="100%"/>
   <br><br>
-  <strong>Understanding what drives property prices in Melbourne</strong>
+  <h3>Raw, honest, and very much in progress</h3>
 </div>
 
 <br>
 
-**⚠️ Work in Progress – Data Cleaning Not Done Yet**  
-This repo is raw, real, and evolving. Expect missing-value chaos, duplicate rows, and quick exploratory plots. Things will get polished soon.
+**⚠️ DATA CLEANING NOT DONE YET**  
+Missing values everywhere. Landsize has 9-million-m² mansions. BuildingArea has 777-year-old houses. You’ve been warned.
 
-### Dataset
-- **Source**: [Kaggle – Melbourne Housing Snapshot](https://www.kaggle.com/datasets/dansbecker/melbourne-housing-snapshot)  
-- **File**: `melb_data.csv` (~34,857 rows, 21 columns)  
-- **Time period**: 2016 – 2018
+### What’s inside right now
+- `melb_data.csv` – the original Kaggle snapshot (34,857 rows)
+- `01_first_look.ipynb` – shape, dtypes, % missing, insane outliers
+- `02_price_analysis.ipynb` – distribution before/after log, top 20 suburbs, price growth by year
+- `03_distance_vs_price.ipynb` – the classic “further from CBD = cheaper” scatter (with outliers that break physics)
+- `04_rooms_bath_car.ipynb` – how many rooms, baths, and car spots actually move the needle
+- `05_suburb_deep_dive.ipynb` – boxplots of the most expensive vs cheapest postcodes
 
-### Current Notebooks
-| Notebook | Description |
-|----------|-------------|
-| `01_raw_exploration.ipynb` | First look – shape, dtypes, missing values, basic stats |
-| `02_price_distribution.ipynb` | Price histograms, log transformations, suburb comparisons |
-| `03_geospatial.ipynb` | Price vs distance from CBD, scatter maps, top suburbs |
-| `04_correlations_features.ipynb` | Heatmaps, Rooms vs Price, Land size outliers |
+### Early observations (pre-cleaning)
+- Median sale price: $1,033,000 AUD
+- 75th percentile distance from CBD: 13.6 km
+- 14% of rows missing `BuildingArea`, 22% missing `YearBuilt`
+- Some properties have 10+ bedrooms and sell for <$300k (data entry errors confirmed)
+- House > Unit > Townhouse in median price, as expected
 
-### Quick Insights So Far
-- Median house price: ~ $1.03M AUD
-- Strongest price drivers: Rooms, Distance from CBD, Property Type, Landsize
-- Southern & Eastern suburbs dominate high-end sales
-- Massive outliers in `Landsize` and `BuildingArea` (still investigating)
+### Next on the list
+- Proper outlier treatment
+- Impute/fix/drop the big missing columns
+- Price per square metre
+- Interactive map with Folium/Plotly
+- Eventually: simple prediction baseline
 
-### Tools
-- Python 3.9+
-- Pandas, NumPy
-- Matplotlib, Seaborn, Plotly
-- JupyterLab / VS Code
+Contributions, suggestions, and “dude you missed this” issues are more than welcome.
 
-### How to Run
-```bash
-git clone https://github.com/yourusername/melbourne-housing-eda.git
-cd melbourne-housing-eda
-pip install -r requirements.txt
-jupyter lab
+December 2025 | MIT License
