@@ -1,34 +1,44 @@
-# EDA Project: Melbourne Housing Prices
+# Melbourne Housing Prices – Exploratory Data Analysis 🏘️
 
-![EDA Banner](https://via.placeholder.com/800x200?text=Melbourne+Housing+Prices+EDA) <!-- Replace with actual banner image if available -->
+<div align="center">
+  <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&q=80&w=2000" alt="Melbourne skyline" />
+  <br><br>
+  <strong>Understanding what drives property prices in Melbourne</strong>
+</div>
 
-## Overview
-This repository contains an Exploratory Data Analysis (EDA) on Melbourne housing prices dataset. The goal is to uncover patterns, trends, and insights related to property values, locations, and market factors through visualizations and statistical summaries.
+<br>
 
-**Disclaimer: Data Cleaning Not Done Yet.** This is an ongoing project—expect updates as cleaning and deeper analysis progress.
+**⚠️ Work in Progress – Data Cleaning Not Done Yet**  
+This repo is raw, real, and evolving. Expect missing-value chaos, duplicate rows, and quick exploratory plots. Things will get polished soon.
 
-## Key Sections
-- **Data Sources**: Melbourne housing dataset (e.g., CSV from Kaggle or public sources).
-- **Tools Used**: Python (Pandas, Matplotlib, Seaborn), Jupyter Notebooks.
-- **Initial Findings**:
-  - High correlation between property size and price.
-  - Regional price variations across suburbs.
-  - Visualizations: Histograms for price distribution, scatter plots for price vs. distance from CBD, and heatmaps for feature correlations.
+### Dataset
+- **Source**: [Kaggle – Melbourne Housing Snapshot](https://www.kaggle.com/datasets/dansbecker/melbourne-housing-snapshot)  
+- **File**: `melb_data.csv` (~34,857 rows, 21 columns)  
+- **Time period**: 2016 – 2018
 
-## Getting Started
-1. Clone the repo: `git clone https://github.com/yourusername/your-repo.git`
-2. Install dependencies: `pip install -r requirements.txt`
-3. Run notebooks: Open in Jupyter and execute cells.
+### Current Notebooks
+| Notebook | Description |
+|----------|-------------|
+| `01_raw_exploration.ipynb` | First look – shape, dtypes, missing values, basic stats |
+| `02_price_distribution.ipynb` | Price histograms, log transformations, suburb comparisons |
+| `03_geospatial.ipynb` | Price vs distance from CBD, scatter maps, top suburbs |
+| `04_correlations_features.ipynb` | Heatmaps, Rooms vs Price, Land size outliers |
 
-## Next Steps
-- Complete data cleaning (handling missing values, outliers).
-- Add advanced analysis (e.g., regression modeling for price prediction).
-- Deploy interactive dashboards (e.g., using Streamlit).
+### Quick Insights So Far
+- Median house price: ~ $1.03M AUD
+- Strongest price drivers: Rooms, Distance from CBD, Property Type, Landsize
+- Southern & Eastern suburbs dominate high-end sales
+- Massive outliers in `Landsize` and `BuildingArea` (still investigating)
 
-For questions, reach out via [your email or GitHub issues].
+### Tools
+- Python 3.9+
+- Pandas, NumPy
+- Matplotlib, Seaborn, Plotly
+- JupyterLab / VS Code
 
----
-
-*Last updated: December 07, 2025*  
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)  
-[![Python Version](https://img.shields.io/badge/python-3.8%2B-blue)](https://www.python.org/)
+### How to Run
+```bash
+git clone https://github.com/yourusername/melbourne-housing-eda.git
+cd melbourne-housing-eda
+pip install -r requirements.txt
+jupyter lab
