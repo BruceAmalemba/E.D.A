@@ -12,23 +12,22 @@
 Raw data with missing values, outliers, and unpolished visuals. Progressing step by step—stay tuned for refinements.
 
 ### Dataset
-- **Source**: [Kaggle – Melbourne Housing Snapshot](https://www.kaggle.com/datasets/dansbecker/melbourne-housing-snapshot)  
-- **File**: `melb_data.csv` (13,580 rows, 21 columns)  
+- **Source**:  
+- **File**: `melb_data.csv` 
 - **Key Features**: Suburb, Rooms, Type (house/unit/townhouse), Price, Distance from CBD, Bathroom, Car spots, Landsize, BuildingArea, YearBuilt, Regionname.
 
 ### Current Explorations
-- `01_initial_overview.ipynb`: Data shape, types, missing values summary, basic descriptives.  
-- `02_price_distributions.ipynb`: Histograms, boxplots by type, log-transformed prices.  
-- `03_location_analysis.ipynb`: Price vs. distance from CBD, suburb medians, scatter plots with latitude/longitude.  
-- `04_feature_correlations.ipynb`: Heatmap of numeric features, rooms/bathrooms vs. price.  
-- `05_outlier_detection.ipynb`: Identifying extreme land sizes and old buildings.
+-  Data shape, types, missing values summary, basic descriptives.  
+- Histograms, boxplots ,Heat maps,displots,displots by type ...    
+- Heatmap of numerical variables  
+   Identifying extreme land sizes and old buildings.
 
 ### Early Insights (Raw Data)
-- Median sale price: ~$903,000 AUD  
+- Medians  
 - Mean sale price: ~$1,075,000 AUD  
-- Most common: 3-bedroom houses, ~10km from CBD  
+- Most common: 3-bedroom houses 
 - Strong correlations: Rooms and price, distance negatively impacts value  
-- Data issues: ~47% missing BuildingArea, outliers like 9,000+ m² landsizes  
+- Data issues: 
 
 ### Tools & Libraries
 - Python 3.8+  
